@@ -16,9 +16,8 @@ const DB_URI = process.env.MONGODB_URI
 // middelwares
 app.use(express.json())
 app.use(cookieParser())
-app.options('*', cors(corsOptions));
 app.use(cors({
-  origin:'https://todo-app-frontend-mon9.onrender.com',
+  origin:process.env.FRONTEND_URL,
   credentials: true,
   methods:"GET, POST, PUT, DELETE",
   allowedHeaders: ["Content-Type", "Authorization"] //Add other headers you want to allow here.
